@@ -14,16 +14,21 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form action="results.html" method="get"> 
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="35">
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="35">  
+                <label for="age">Your Age</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+                <h5>Must be 21 or older to enter</h5>
+                <label for="password">Your Secret Code (must be 6 alphanumeric characters)<span class="required-field">*</span></label>
+                <input type="password" id="password" name="password" pattern="[0-9a-zA-Z]{6}" title="6-Character Alphanumeric Pass Code" required>
             </div>
             <fieldset>
                 <div>
                 <legend>Your Contact Info</legend>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+                <label for="email">Email</label><span class="required-field">*</span>
+                <input type="email" id="email" name="email" required>
                 </div>
                 <div>
                     <label for="address">Your Address</label>
@@ -83,7 +88,7 @@
                         <option value="WY">Wyoming</option>
                     </select>
                 <label for="zipcode">Your Zipcode</label>
-                <input type="text" name="zipcode">
+                <input type="text" name="zipcode" pattern="[0-9]{5}" title="5-digit US Zipcode">
                 </div>
             </fieldset>
             <fieldset>
@@ -111,13 +116,13 @@
             <div>
                 <label>Any Extras?</label>
                 <div>
-                <label>Sauna</label>
+                <label for="extras">Sauna</label>
                 <input type="checkbox" value="sauna" name="extras">
-                <label>Pool</label>
+                <label for="extras">Pool</label>
                 <input type="checkbox" value="pool" name="extras">
-                <label>Gym</label>
+                <label for="extras">Gym</label>
                 <input type="checkbox" value="gym" name="extras">
-                <label>Golf Course</label>
+                <label for="extras">Golf Course</label>
                 <input type="checkbox" value="golf course" name="extras">
                 </div>
             </div>
